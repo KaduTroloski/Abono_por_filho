@@ -1,12 +1,17 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class abono {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         String nome, nomemaior, nomemenor, cont;
         Integer filhos, abonofilho, qtdfilhos, dias, i, qtdmaior2600;
         Double salario, maiorsalario, menorsalario, media, salariototal, somasalario;
         Scanner ler = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         qtdmaior2600 = 0;
         i = 0;
         nomemenor = "";
@@ -19,7 +24,7 @@ public class abono {
         while (cont.equals("S")) {
             i = i + 1;
             System.out.print("Digite o nome do funcionario: ");
-            nome = ler.next();
+            nome = br.readLine();
             System.out.print("Digite o salario do funcionario: ");
             salario = ler.nextDouble();
            System.out.print("Digite os dias trabalhados do funcionario: ");
